@@ -3,14 +3,15 @@
 {% block title %} Hello {{controller_name}}{% endblock %}
 
 {% block body %}
+
 <div class="container mt-5">
-    <form action="task1.php" method="post" enctype="multipart/form-data">
+    <form action="show" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-6">
                 <!-- Input -->
-                <h6 class="fw-normal"> Как вас зовут? *</h6>
+                <h6 class="fw-normal"> {{name}} *</h6>
                 <div class="input-group mb-3 col-12 col-md-3">
-                    <input required type="text" class=" form-control col-md-3" name="fname" class="form-control"
+                <input required type="text" class=" form-control col-md-3" name="fname" class="form-control"
                         placeholder="Имя">
                     <input required type="text" class=" form-control col-md-3" name="sname" class="form-control"
                         placeholder="Фамилия">
@@ -18,7 +19,7 @@
 
                 <!-- Radio -->
                 <div class="mb-3 col-12 col-md-auto">
-                    <h6 class="fw-normal">Сколько вам лет? *</h6>
+                    <h6 class="fw-normal"> {{age}} *</h6>
                     <input class="form-check-input" required type="radio" id="age1" value="18-24" name="age">
                     <label for="age1">18-24</label><br>
                     <input class="form-check-input " type="radio" id="age2" value="25-35" name="age">
@@ -29,7 +30,7 @@
 
                 <!-- Checkbox -->
                 <div class="mb-3 col-12 col-md-auto">
-                    <h6 class="fw-normal"> На каком языке программирования вы пробовали писать?</h6>
+                    <h6 class="fw-normal"> {{prog_langs}}</h6>
                     <div class="mb-2 col-md-auto">
                         <div class="form-check form-switch">
                             <input type="checkbox" class="form-check-input " value="Python" name="checklist[]"id="proglang1">
@@ -44,7 +45,7 @@
 
                 <!-- Select -->
                 <div class="mb-3 col-12 col-md-auto">
-                    <h6 class="fw-normal"> Выберите наиболее понравившийся</h6>
+                    <h6 class="fw-normal"> {{fav_lang}}</h6>
                     <select class="form-select" required name="fav_lang" id="fav_lang">
                         <option value="Python">Python</option>
                         <option value="Java">Java</option>
@@ -58,7 +59,7 @@
 
                 <!-- Range -->
                 <div class="mb-2 col-12 col-md-auto">
-                    <h6 class="fw-normal" >Оцените опрос</h6>
+                    <h6 class="fw-normal" >{{rate}}</h6>
                         <div class="mx-1 d-flex justify-content-between">
                           <span>1</span>
                           <span>2</span>
@@ -71,13 +72,13 @@
 
                 <!-- Textarea -->
                 <div class="mb-3 col-12 col-md-auto ">
-                    <h6 class="fw-normal">Что вы думаете о опросе?</h6>
+                    <h6 class="fw-normal">{{opinion}}</h6>
                     <textarea class="form-control " name="opinion" id="ta1" rows="4" cols="1"></textarea>
                 </div>
 
                 <!-- Добавьте файл -->
                 <div class="mb-3 col-12 col-md-auto">
-                    <h6 class="fw-normal">Загрузите ваш файл</h6>
+                    <h6 class="fw-normal">{{file}}</h6>
                     <input class="form-control " id="inputfile" type="file" name="uploadfile" required
                         accept="image/*, .docx,.pdf">
                         <label for="inputfile" class="fw-light fs-7 fst-italic">
@@ -91,12 +92,11 @@
         <div class=" d-flex flex-row justify-content-md-end justify-content-center">
          <input class="btn btn-info text-white col-8 col-md-2 mb-3" type="submit">
         </div>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            Пожалуйста, заполните все обязательные поля перед отправкой формы
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
 
-    </form>
+        <div class="alert alert-warning alert-dismissible fade show container mt-5" role="alert">
+            Пожалуйста, заполните все обязательные поля перед отправкой формы
+            <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+       
 </div>
 
 </body>
