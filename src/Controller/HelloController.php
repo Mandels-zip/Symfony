@@ -14,14 +14,16 @@ class HelloController extends AbstractController
         return $this->render('hello/index.html.twig', [
             'controller_name' => 'HelloController',
             'hello_world' => 'Hello World!!',
-            'name' => 'Как вас зовут?',
-            'age' => 'Сколько вам лет?',
-            'prog_langs' => 'На каком языке программирования вы пробовали писать?',
-            'fav_lang' => 'Выберите наиболее понравившийся',
-            'rate' => 'Оцените опрос',
-            'opinion' => 'Что вы думаете о опросе?',
-            'file' => 'Загрузите ваш файл'
-        ]);
+            'questions' =>[
+                'Как вас зовут?',
+                'Сколько вам лет?',
+                'На каком языке программирования вы пробовали писать?',
+                'Выберите наиболее понравившийся',
+                'Оцените опрос',
+                'Что вы думаете о опросе?',
+                'Загрузите ваш файл',
+        ]],
+    );
     }
 
     public function index_list(): Response
