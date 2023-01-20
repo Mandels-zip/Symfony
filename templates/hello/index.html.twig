@@ -22,25 +22,24 @@
                 <!-- Radio -->
                 <div class="mb-3 col-12 col-md-auto">
                     <h6 class="fw-normal">{{questions[1]}} *</h6>
-                    <input class="form-check-input" required type="radio" id="age1" value="18-24" name="age">
-                    <label for="age1">18-24</label><br>
-                    <input class="form-check-input " type="radio" id="age2" value="25-35" name="age">
-                    <label for="age2">25-35</label><br>
-                    <input class="form-check-input " type="radio" id="age3" value="36+" name="age">
-                    <label for="age3">36+</label>
+                    {% for key, label in radio.label %}
+                    <input class="form-check-input" required type="radio" id="{{key}}" value="{{label}}" name="age">
+                    <label for="{{key}}">{{label}}</label><br>
+                    {% endfor %} 
+                    
                 </div>
+
+                
 
                 <!-- Checkbox -->
                 <div class="mb-3 col-12 col-md-auto">
                     <h6 class="fw-normal"> {{questions[2]}} </h6>
                     <div class="mb-2 col-md-auto">
                         <div class="form-check form-switch">
-                            <input type="checkbox" class="form-check-input " value="Python" name="checklist[]"id="proglang1">
-                            <label for="proglang1"> Python </label><br>
-                            <input type="checkbox" class="form-check-input " value="Java" name="checklist[]"id="proglang2">
-                            <label for="proglang2"> Java</label><br>
-                            <input type="checkbox" class="form-check-input " value="C#" name="checklist[]" id="proglang3">
-                            <label for="proglang3"> C#</label>
+                            {% for key, label in checkbox.label %}
+                            <input type="checkbox" class="form-check-input " value="{{label|e}} " name="checklist[]"id="{{key}}">
+                            <label for="{{key}}"> {{label|e}}  </label><br>
+                            {% endfor %}                          
                         </div>
                     </div>
                 </div>
@@ -63,11 +62,9 @@
                 <div class="mb-2 col-12 col-md-auto">
                     <h6 class="fw-normal" > {{questions[4]}} </h6>
                         <div class="mx-1 d-flex justify-content-between">
-                          <span>1</span>
-                          <span>2</span>
-                          <span>3</span>
-                          <span>4</span>
-                          <span>5</span>
+                          {% for i in 1..5%}
+                          <span>{{i}}</span>
+                          {% endfor%}
                         </div>
                     <input type="range" class="form-range" min="1" max="5" name="grade" >
                 </div>
@@ -94,6 +91,11 @@
         <div class=" d-flex flex-row justify-content-md-end justify-content-center">
          <input class="btn btn-info text-white col-8 col-md-2 mb-3" type="submit">
         </div>
+        
+        {% include 'alert.html.twig' %}
+       
+        
+      
 
 </div>
 

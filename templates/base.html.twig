@@ -21,16 +21,6 @@
     </head>
     <body>
         {% block body %}  {% endblock %}
-        
-        {% block footer%}  <div class="alert alert-warning alert-dismissible fade show container mt-5" role="alert">
-            Пожалуйста, заполните все обязательные поля перед отправкой формы
-            <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
-            <p> Список вопросов </p>
-            {% for question in questions%}
-                <li> {{question}} </li>
-            {% endfor %}
-            {% endblock%}
-        
         </div>
     </body>
 </html>

@@ -22,7 +22,21 @@ class HelloController extends AbstractController
                 'Оцените опрос',
                 'Что вы думаете о опросе?',
                 'Загрузите ваш файл',
-        ]],
+            ],
+            'checkbox' =>[
+                'label' => [
+                    'proglang1' => 'Python',
+                    'proglang2' => 'Java',
+                    'proglang3' => 'C#'
+            ]
+    ],
+    'radio' =>[
+        'label' => [
+            'age1' => '18-24',
+            'age2' => '25-35',
+            'age3' => '36+'
+        ]
+    ]]
     );
     }
 

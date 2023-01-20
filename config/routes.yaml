@@ -5,6 +5,7 @@
 app_index:
   path: /
   controller: App\Controller\HelloController::index
+ 
 
 app_indexlist:
   path: /show
