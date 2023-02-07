@@ -12,11 +12,10 @@
                 <!-- Input -->
                 <h6 class="fw-normal"> {{questions[0]}} *</h6>
                 <div class="input-group mb-3 col-12 col-md-3">
-                <input required type="text" class=" form-control col-md-3" name="fname" class="form-control"
-                        placeholder="Имя">
-                    <input required type="text" class=" form-control col-md-3" name="sname" class="form-control"
-                        placeholder="Фамилия">
-                </div>
+                    {%for key, label in input.label%}
+                    <input required type="text" class=" form-control col-md-3" name="{{key}}" class="form-control"
+                        placeholder="{{label}}">
+                    {% endfor %}
                 
 
                 <!-- Radio -->
