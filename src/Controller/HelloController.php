@@ -36,6 +36,12 @@ class HelloController extends AbstractController
                     'age2' => '25-35',
                     'age3' => '36+'
                 ]
+                ],
+            'input' =>[
+                'label' => [
+                    'fname' => 'Имя',
+                    'snmae' => 'Фамилия',
+                ]
             ]]
     );
     }
