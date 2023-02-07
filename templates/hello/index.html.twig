@@ -39,7 +39,7 @@
                             {% for key, label in checkbox.label %}
                             <input type="checkbox" class="form-check-input " value="{{label|e}} " name="checklist[]"id="{{key}}">
                             <label for="{{key}}"> {{label|e}}  </label><br>
-                            {% endfor %}                          
+                            {% endfor %}                 
                         </div>
                     </div>
                 </div>
@@ -48,9 +48,9 @@
                 <div class="mb-3 col-12 col-md-auto">
                     <h6 class="fw-normal"> {{questions[3]}} </h6>
                     <select class="form-select" required name="fav_lang" id="fav_lang">
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="C#">C#</option>
+                        {% for label in checkbox.label %}
+                        <option value="{{label|e}}">{{label|e}}</option>
+                        {% endfor %}   
                     </select>
                 </div>
             </div>

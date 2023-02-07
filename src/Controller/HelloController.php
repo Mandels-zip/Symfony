@@ -29,14 +29,14 @@ class HelloController extends AbstractController
                     'proglang2' => 'Java',
                     'proglang3' => 'C#'
             ]
-    ],
-    'radio' =>[
-        'label' => [
-            'age1' => '18-24',
-            'age2' => '25-35',
-            'age3' => '36+'
-        ]
-    ]]
+            ],
+            'radio' =>[
+                'label' => [
+                    'age1' => '18-24',
+                    'age2' => '25-35',
+                    'age3' => '36+'
+                ]
+            ]]
     );
     }
 
