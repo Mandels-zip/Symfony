@@ -40,7 +40,7 @@ class HelloController extends AbstractController
             'input' =>[
                 'label' => [
                     'fname' => 'Имя',
-                    'snmae' => 'Фамилия',
+                    'sname' => 'Фамилия',
                 ]
             ]]
     );
