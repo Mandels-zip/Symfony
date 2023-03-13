@@ -2,11 +2,18 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-app_index:
+index:
   path: /
   controller: App\Controller\HelloController::index
- 
 
-app_indexlist:
+submit_form:
+  path: /submit-form
+  controller: App\Controller\HelloController::submitForm
+
+index_list:
   path: /show
   controller: App\Controller\HelloController::index_list
+
+error_page:
+    path: /error
+    controller: App\Controller\ErrorController::errorPage
