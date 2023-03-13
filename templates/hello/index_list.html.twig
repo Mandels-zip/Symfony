@@ -3,7 +3,21 @@
 {% block title %} Hello {{controller_name}}{% endblock %}
 
 {% block body %}
-Спасибо, что прошли опрос
+<h2>Data:</h2>
+<p>Name: {{data.fname}}</p>
+<p>Second name: {{data.sname}}</p>
+<p>Age: {{data.age}}</p>
+<p> Languages: 
+    {% for item in data.checklist %}
+    <p>{{item}}</p>
+    {%endfor%}
+<p>fav Language: {{data.fav_lang}}</p>
+<p>grade: {{data.grade}}</p>
+<p>opinion: {{data.opinion}}</p>
+
+<p>File name: {{data.file_name}} </p>
+<p> File size: {{data.file_size}} </p>
+
 
 {% endblock %}
 

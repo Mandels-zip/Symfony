@@ -1,0 +1,88 @@
+<div class="container mt-5">
+    <form action="{{path ('submit_form')}}" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-6">
+          
+                <!-- Input -->
+                <h6 class="fw-normal"> {{questions[0]}} *</h6>
+                <div class="input-group mb-3 col-12 col-md-3">
+                    {%for key, label in input.label%}
+                    <input required type="text" class=" form-control col-md-3" name="{{key}}" class="form-control"
+                        placeholder="{{label}}">
+                    {% endfor %}
+                </div>
+
+                <!-- Radio -->
+                <div class="mb-3 col-12 col-md-auto">
+                    <h6 class="fw-normal">{{questions[1]}} *</h6>
+                    {% for key, label in radio.label %}
+                    <input class="form-check-input" required type="radio" id="{{key}}" value="{{label}}" name="age">
+                    <label for="{{key}}">{{label}}</label><br>
+                    {% endfor %} 
+                    
+                </div>
+
+                
+
+                <!-- Checkbox -->
+                <div class="mb-3 col-12 col-md-auto">
+                    <h6 class="fw-normal"> {{questions[2]}} </h6>
+                    <div class="mb-2 col-md-auto">
+                        <div class="form-check form-switch">
+                            {% for key, label in checkbox.label %}
+                            <input type="checkbox" class="form-check-input " value="{{label|e}} " name="checklist[]"id="{{key}}">
+                            <label for="{{key}}"> {{label|e}}  </label><br>
+                            {% endfor %}                 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select -->
+                <div class="mb-3 col-12 col-md-auto">
+                    <h6 class="fw-normal"> {{questions[3]}} </h6>
+                    <select class="form-select" required name="fav_lang" id="fav_lang">
+                        {% for label in checkbox.label %}
+                        <option value="{{label|e}}">{{label|e}}</option>
+                        {% endfor %}   
+                    </select>
+                </div>
+            </div>
+
+            
+            <div class="col-md-6">
+
+                <!-- Range -->
+                <div class="mb-2 col-12 col-md-auto">
+                    <h6 class="fw-normal" > {{questions[4]}} </h6>
+                        <div class="mx-1 d-flex justify-content-between">
+                          {% for i in 1..5%}
+                          <span>{{i}}</span>
+                          {% endfor%}
+                        </div>
+                    <input type="range" class="form-range" min="1" max="5" name="grade" >
+                </div>
+
+                <!-- Textarea -->
+                <div class="mb-3 col-12 col-md-auto ">
+                    <h6 class="fw-normal"> {{questions[5]}}</h6>
+                    <textarea class="form-control " name="opinion" id="ta1" rows="4" cols="1"></textarea>
+                </div>
+
+                <!-- Добавьте файл -->
+                <div class="mb-3 col-12 col-md-auto">
+                    <h6 class="fw-normal">{{questions[6]}} </h6>
+                    <input class="form-control " id="inputfile" type="file" name="uploadfile" required
+                        accept="image/*, .docx,.pdf">
+                        <label for="inputfile" class="fw-light fs-7 fst-italic">
+                            <small>Выберите документ или pdf файл вышей любимой книги по программированию, или картинку с ее обложкой </small>
+                        </label>
+                </div>
+            </div>
+        </div>
+    
+       
+        <div class=" d-flex flex-row justify-content-md-end justify-content-center">
+         <input class="btn btn-info text-white col-8 col-md-2 mb-3" type="submit">
+        </div>
+
+    </form>
